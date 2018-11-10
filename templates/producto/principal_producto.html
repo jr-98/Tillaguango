@@ -1,0 +1,29 @@
+{% extends 'master.html'%}
+{% block contenido %}
+<a href="crear" class="btn btn-success">Crear Productos</a> 
+  <table class="table table-striped" style="width:100%" border="1px solid black">
+  	<thead class="thead-dark">
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Modelo</th>
+			<th scope="col">Marca</th>
+			<th scope="col">Precio</th>
+			<th scope="col">Fecha de Ingreso</th>
+			<th scope="col">Descripcion</th>
+			
+		</tr>
+	</thead>
+	{%for c in lista%}
+		<tr  align="center">
+			<td> {{c.idt}}</td>
+			<td> {{c.nombre}}</td>
+			<td> {{c.marca}}</td>
+			<td> {{c.precio}}</td>
+			<td> {{c.fechaIngreso}}</td>
+			<td> {{c.descripcion}}</td>
+		</tr>
+	{%endfor%}
+	<!--Evento de Buscar en pagina principal-->
+	{% endblock%}
+    </table>

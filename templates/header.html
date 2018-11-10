@@ -1,0 +1,24 @@
+
+{% load staticfiles %}
+
+<center>
+	
+	<label>Universidad Nacional de Loja</label>
+
+</center>
+<div>
+	{% if user.is_authenticated %}
+		<p>Bienvenido, <b>{{user.username}}</b>|<a href="{% url 'salir' %}">Cerrar Sesion</a></p>
+	{% else %}
+		<p>Bienvenido.Por favor<a href="{% url 'autenticar' %}">Ingresar</a></p>	
+	{% endif%}
+
+
+	{% for msg in messages %}
+		<div class="alert alert-{{msg.level_tag}}" role="alert">
+			{{msg.message}}
+		
+		</div>	
+	{% endfor %}
+
+</div>
